@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta name=viewport content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"> <title>Achados Shopee</title> <style>
+body{font-family:sans-serif;background:#111;color:#fff;text-align:center}
+a{display:block;margin:8px auto;padding:12px;width:85%;max-width:400px;background:#f60;color:#000;text-decoration:none;border-radius:8px}
+.s{display:none}input{padding:8px;width:80%;margin:8px;border-radius:6px;border:0}
+</style></head><body>
+
+<h2>🔥 Achados</h2>
+
+<a onclick="v('o')">🛒 Objetos</a>
+<a onclick="v('r')">👕 Roupas</a>
+<a onclick="v('t')">💻 Tech</a>
+
+<div id="o" class="s">
+<input onkeyup="f(this,'o')" placeholder="Buscar">
+</div>
+
+<div id="r" class="s">
+<input onkeyup="f(this,'r')" placeholder="Buscar">
+<a class="i" href="https://br.shp.ee/jztuoFv7">👕 Camiseta Hollow Knight</a>
+</div>
+
+<div id="t" class="s">
+<input onkeyup="f(this,'t')" placeholder="Buscar">
+</div>
+
+<script>
+function v(id){
+document.querySelectorAll('.s').forEach(e=>e.style.display='none');
+document.getElementById(id).style.display='block';
+}
+function f(i,id){
+let t=i.value.toLowerCase();
+document.querySelectorAll('#'+id+' .i').forEach(e=>{
+e.style.display=e.textContent.toLowerCase().includes(t)?'block':'none';
+});
+}
+</script>
